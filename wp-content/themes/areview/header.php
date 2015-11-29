@@ -46,7 +46,13 @@
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				<?php endif; ?>
+				<div class="social">
+					<script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+					<script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
+					<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki"></div>
+				</div>
 			</div>
+
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
 				<nav class="social-navigation clearfix">
 					<?php wp_nav_menu( array( 'theme_location' => 'social', 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'menu_class' => 'menu clearfix', 'fallback_cb' => false ) ); ?>

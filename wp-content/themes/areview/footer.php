@@ -16,9 +16,9 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="decoration-bar"></div>
 		<div class="site-info container">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'areview' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'areview' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %2$s by %1$s', 'areview' ), 'aThemes', '<a href="http://athemes.com/theme/areview">aReview</a>' ); ?>
+			<p>© 2015 Журнал "Авто и Сервис" - твой главный помощник в мире авто и сервиса.
+				Все права защищены. Использование любых материалов, размещённых на сайте,
+				разрешается при условии ссылки на сайт <span><a href="autoiservice.org"> www.autoiservice.org</a></span> </p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
@@ -26,4 +26,3 @@
 <?php wp_footer(); ?>
 
 </body>
-</html>
