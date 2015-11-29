@@ -515,7 +515,7 @@ Widgets
 }
 .social-widget a[href*="vk.com"]::before,
 .social-navigation li a[href*="vk.com"]::before {
-	content: '';
+	content: '\f0d2';
 }
 .social-widget a[href*="vk.com"] {
 	background-color: #3b5998;
