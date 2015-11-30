@@ -14,29 +14,28 @@ get_header(); ?>
 
 <div id="primary" class="content-area no-widget">
     <main id="main" class="site-main" role="main">
-
-<!--        --><?php //while ( have_posts() ) : the_post(); ?>
-<!---->
-<!--            --><?php //get_template_part( 'content', 'page' ); ?>
-<!---->
-<!--            --><?php
-//            // If comments are open or we have at least one comment, load up the comment template
-//            if ( comments_open() || '0' != get_comments_number() ) :
-//                comments_template();
-//            endif;
-//            ?>
-<!---->
-<!--        --><?php //endwhile; // end of the loop. ?>
         <div class="maps">
-            <div style="float: left;">
-            <h3 style="text-align: center;">Киев</h3>
+            <div class="maps-1">
+            <h3>Киев</h3>
             <iframe src="https://www.google.com/maps/d/embed?mid=zWAXoUzUuC8c.kj9ZoU-H6JyQ" width="500" height="480"></iframe>
                 </div>
-            <div style="float: right;">
-            <h3 style="text-align: center;">Харьков</h3>
+            <div class="maps-2">
+            <h3>Харьков</h3>
             <iframe src="https://www.google.com/maps/d/embed?mid=zWAXoUzUuC8c.kz3fqGZU8Oxg" width="500" height="480"></iframe>
                 </div>
         </div>
+            <?php while ( have_posts() ) : the_post(); ?>
+
+                    <?php get_template_part( 'content', 'page' ); ?>
+
+                    <?php
+                    // If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || '0' != get_comments_number() ) :
+                        comments_template();
+                    endif;
+                    ?>
+
+            <?php endwhile; // end of the loop. ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->
