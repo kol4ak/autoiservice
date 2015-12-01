@@ -1314,7 +1314,7 @@ div.meteor-slides {
 	margin-bottom: 15px;
 }
 .no-widget{
-	width: 1050px;
+	width: 100%;
 }
 .site-main{
 	margin: 0;
@@ -1347,9 +1347,9 @@ div.meteor-slides {
     position: relative;
 }
 .maps-2 {
-	float: left;
+	float: right;
     position: relative;
-    margin-left: 20px;
+
 }
 .form-site{
 
@@ -1363,6 +1363,6 @@ div.meteor-slides {
 }
 .post-18 h1{
 
-	display: non;
+	display: none;
 
 }
