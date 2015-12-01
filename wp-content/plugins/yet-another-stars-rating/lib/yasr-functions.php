@@ -299,6 +299,14 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 
             $review_choosen = yasr_get_snippet_type();
 
+            $schema = apply_filters( 'yasr_filter_schema_microdata', $review_choosen );
+
+            if ($schema) {
+
+                return $content . $schema;
+
+            }
+            
             if (YASR_SNIPPET == 'overall_rating') {
 
                 $overall_rating=yasr_get_overall_rating();
@@ -412,6 +420,7 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 
             }
 
+
             if ( is_singular() && is_main_query() && !is_404() ) {
                 return $content . $schema;
             }
@@ -435,15 +444,23 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 
             $rich_snippet["@context"] = "http://schema.org/";
 
-            if (YASR_SNIPPET == 'overall_rating') {
+            $schema = apply_filters( 'yasr_filter_schema_jsonld', $review_choosen );
 
-                $overall_rating=yasr_get_overall_rating();
+            if ($schema) {
 
-                if($overall_rating && $overall_rating != '-1' && $overall_rating != '0.0') {
+                return $content . $script_type . $schema . $end_script_type;
 
-                    if(is_singular() && is_main_query() ) {
+            }
 
-                        global $post;
+    		if (YASR_SNIPPET == 'overall_rating') {
+
+    			$overall_rating=yasr_get_overall_rating();
+
+    			if($overall_rating && $overall_rating != '-1' && $overall_rating != '0.0') {
+
+    				if(is_singular() && is_main_query() ) {
+
+    					global $post;
 
                         $author = get_the_author();
 
@@ -605,6 +622,21 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 
         $review_type_choosen = yasr_get_snippet_type();
 
+        switch ($review_type_choosen) {
+            case 'Product':
+                $review_type_choosen = 1;
+                break;
+            case 'Place':
+                $review_type_choosen = 2;
+                break;
+            case 'Recipe':
+                $review_type_choosen = 3;
+                break;
+            case 'Other':
+                $review_type_choosen = 4;
+                break;
+        }
+
         ?>
 
         <select id="yasr-choose-reviews-types-list"> 
@@ -615,7 +647,7 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 
                 foreach ($review_type as $type) {
 
-                    if ($type == $review_type_choosen) {
+                    if ($i == $review_type_choosen) {
 
                         echo "<option value=\"$i\" selected>$type</option>";
 

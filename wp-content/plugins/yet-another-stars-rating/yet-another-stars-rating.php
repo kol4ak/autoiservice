@@ -3,7 +3,7 @@
  * Plugin Name:  Yet Another Stars Rating
  * Plugin URI: http://wordpress.org/plugins/yet-another-stars-rating/
  * Description: Rating system with rich snippets
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Dario Curvino
  * Author URI: https://yetanotherstarsrating.com/
  * Text Domain: yet-another-stars-rating
@@ -32,7 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>
 if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // Exit if accessed directly
 
     
-define('YASR_VERSION_NUM', '1.0.5');
+define('YASR_VERSION_NUM', '1.0.6');
 
 //Plugin relative path
 define( "YASR_RELATIVE_PATH", dirname(__FILE__) );
@@ -105,16 +105,38 @@ define ("YASR_METABOX_OVERALL_RATING", $stored_options['metabox_overall_rating']
 //Get stored style options 
 $style_options = get_option ('yasr_style_options');
 
-if ($style_options && isset($style_options['textarea'])) {
+if ($style_options) {
 
-	define ("YASR_CUSTOM_CSS_RULES", $style_options['textarea']);
-	define ("YASR_SCHEME_COLOR", $style_options['scheme_color_multiset']);
+	if(isset($style_options['textarea'])) {
+
+		define ("YASR_CUSTOM_CSS_RULES", $style_options['textarea']);
+
+	}
+
+	else {
+
+		define ("YASR_CUSTOM_CSS_RULES", NULL);
+
+	}
+
+	if(isset($style_options['scheme_color_multiset'])) {
+
+		define ("YASR_SCHEME_COLOR", $style_options['scheme_color_multiset']);
+
+	}
+
+	else {
+
+		define ("YASR_SCHEME_COLOR", NULL);
+		
+	}
 
 }
 
 else {
 
 	define ("YASR_CUSTOM_CSS_RULES", NULL);
+	define ("YASR_SCHEME_COLOR", NULL);
 
 }
 

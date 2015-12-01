@@ -81,7 +81,7 @@ $n_multi_set = NULL; //Evoid undefined variable when printed outside multiset ta
 
             <a href="?page=yasr_settings_page&tab=general_settings" class="nav-tab <?php if ($active_tab == 'general_settings' || ($active_tab != 'manage_multi' && $active_tab != 'style_options' && $active_tab != 'go_pro' && $active_tab != 'pro_general_options' && $active_tab != 'charts_options' && $active_tab != 'activate_license')) echo 'nav-tab-active'; ?>" > <?php _e("General Settings", 'yet-another-stars-rating'); ?> </a>
             <a href="?page=yasr_settings_page&tab=manage_multi" class="nav-tab <?php if ($active_tab == 'manage_multi') echo 'nav-tab-active'; ?>" > <?php _e("Multi Sets", 'yet-another-stars-rating'); ?> </a>
-            <a href="?page=yasr_settings_page&tab=style_options" class="nav-tab <?php if ($active_tab == 'style_options') echo 'nav-tab-active'; ?>" > <?php _e("Styles", 'yet-another-stars-rating'); ?> </a>
+            <a href="?page=yasr_settings_page&tab=style_options" class="nav-tab <?php if ($active_tab == 'style_options') echo 'nav-tab-active'; ?>" > <?php _e("Aspect & Styles", 'yet-another-stars-rating'); ?> </a>
             <?php do_action( 'yasr_add_settings_tab', $active_tab ); ?>
 
         </h2>
@@ -293,6 +293,7 @@ $n_multi_set = NULL; //Evoid undefined variable when printed outside multiset ta
 			            	submit_button( __('Save') );
 			           	?>
 			       	</form>
+
 			</div>
 
 			<?php 

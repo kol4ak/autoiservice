@@ -28,6 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 
 	    }
 
+
+/****** Settings Pages ******/
+
 	//add tab on settings page
 	add_action( 'yasr_add_settings_tab', 'yasr_free_settings_tab');
 
@@ -41,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 		}
 
 
-	//content of the tab above
+	//content of the bottom in the settings tab
 	add_action( 'yasr_settings_check_active_tab', 'yasr_free_check_active_tab' );
 
 		function yasr_free_check_active_tab ($active_tab) {
@@ -55,6 +58,27 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
 		        yasr_ask_rating ();
 
 			}
+
+		}
+
+
+/****** End Settings Pages ******/
+
+	//Always return False
+	add_filter( 'yasr_filter_schema_microdata', 'yasr_filter_schema_microdata_callback');
+
+		function yasr_filter_schema_microdata_callback () {
+
+			return FALSE;
+
+		}
+
+	//Always return False
+	add_filter( 'yasr_filter_schema_jsonld', 'yasr_filter_schema_jsonld_callback');
+
+		function yasr_filter_schema_jsonld_callback () {
+
+			return FALSE;
 
 		}
 

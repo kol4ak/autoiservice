@@ -169,9 +169,9 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
                 $review_type = $wpdb->update(
                     YASR_VOTES_TABLE,
                     array (
-                        'review_type' => $reviewtype
+                        'review_type' => $reviewtype //data
                         ),
-                    array('post_id' => $post_id),
+                    array('post_id' => $post_id), //where
                     array('%s'),
                     array('%d')
                 );
@@ -179,7 +179,7 @@ if ( ! defined( 'ABSPATH' ) ) exit('You\'re not allowed to see this page'); // E
                 //if fail there is no row so make new one
                 if($review_type === 0) {
 
-                    $review_type = $wpdb->insert(
+                    $review_type = $wpdb->replace(
                         YASR_VOTES_TABLE,
                         array (
                             'post_id' => $post_id,

@@ -1305,7 +1305,6 @@ add_action( 'admin_init', 'yasr_style_options_init' ); //This is for auto insert
     	add_settings_section( 'yasr_style_options_section_id', __('Style Options', 'yet-another-stars-rating'), 'yasr_style_section_callback', 'yasr_style_tab' );
     		add_settings_field( 'yasr_color_scheme_multiset', __('Which color scheme do you want to use?', 'yet-another-stars-rating') , 'yasr_color_scheme_multiset_callback', 'yasr_style_tab', 'yasr_style_options_section_id', $style_options);
     		add_settings_field( 'yasr_style_options_textarea', __('Custom CSS Styles', 'yet-another-stars-rating'), 'yasr_style_options_textarea_callback', 'yasr_style_tab', 'yasr_style_options_section_id', $style_options );
-
 	}
 
 	function yasr_style_section_callback () {
@@ -1529,6 +1528,7 @@ function yasr_fb_box ($position=FALSE) {
 				<blockquote cite="https://www.facebook.com/yetanotherstarsrating"><a href="https://www.facebook.com/yetanotherstarsrating">YASR - Yet Another Stars Rating</a></blockquote>
 			</div>
 		</div>
+		
 	</div>
 
 	<?php

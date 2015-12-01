@@ -1331,6 +1331,11 @@ div.meteor-slides {
 	margin-top: 30px;
 }
 
+.maps {
+
+    position: relative;
+}
+
 .maps h3{
 	margin: 0;
 	padding: 0;
@@ -1339,9 +1344,12 @@ div.meteor-slides {
 }
 .maps-1 {
 	float: left;
+    position: relative;
 }
 .maps-2 {
-	float: right;
+	float: left;
+    position: relative;
+    margin-left: 20px;
 }
 .form-site{
 
