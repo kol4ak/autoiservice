@@ -45,6 +45,8 @@ function areview_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'areview' ),
 		'social' => __( 'Social', 'areview' ),
+		'sites' => __('isd','areview'),
+
 	) );
 	
 	/*

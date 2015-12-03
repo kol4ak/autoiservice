@@ -113,8 +113,9 @@ Menus
 .main-navigation li {
 	float: left;
 	position: relative;
-	padding: 25px 10px;
-	margin-right: 10px;
+	padding: 10px 10px;
+	margin-right: 35px;
+	margin-left:-25px;
 	text-transform: uppercase;
 	font-family: 'Roboto Condensed', sans-serif;	
 }
@@ -176,8 +177,9 @@ Menus
 }
 /* Menu icons */
 .home-icon {
+	display:none;
 	float: left;
-	padding: 18px 10px;
+	padding: 3px 10px;
 	margin-right: 10px;
 	margin-left: -30px;
 	line-height: 1;
@@ -1056,8 +1058,14 @@ Structure
 	position: relative;
 	padding: 0 15px;
 }
+.site-header .container{
+
+	background-color: white;
+}
 .site-branding {
-	padding: 15px 0;
+
+	padding-bottom: 10px;
+
 }
 .site-title {
 	font-size: 60px;
@@ -1075,7 +1083,7 @@ Structure
 	color: #888;
 }
 .site-content {
-	padding: 15px 30px 0;
+	padding: 70px 30px 0;
 	background-color: #fff;
 	box-shadow: 0 1px 1px #000;
 }
@@ -1366,4 +1374,18 @@ div.meteor-slides {
 
 	display: none;
 
+}
+.main-navigation .container {
+	padding-right: 0;
+}
+.menu-isd-container  li{
+
+	margin-right: 136px;
+	padding-right: 0;
+
+
+}
+.main-navigation li:last-child{
+
+	margin-right: 0;
 }

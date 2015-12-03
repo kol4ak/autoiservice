@@ -46,11 +46,7 @@
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				<?php endif; ?>
-				<div class="social">
-					<script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
-					<script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
-					<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki"></div>
-				</div>
+
 			</div>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
@@ -76,5 +72,5 @@
 	<?php if ( is_home() && get_theme_mod('carousel_display') ) : ?>
 		<?php echo areview_carousel_template(); ?>
 	<?php endif; ?>
-
+	<div class="main-navigation"><div class="container" style="height:35px;"><?php wp_nav_menu( array( 'theme_location' => 'sites', 'fallback_cb' => false, 'items_wrap' => '<ul><li id="item-id" style="color:white;">Всеукраиские издания : </li>%3$s</ul>' ) ); ?></div></div>
 	<div id="content" class="site-content container">
