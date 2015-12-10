@@ -39,6 +39,8 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'areview' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
+<!--			<div class="isd-menu"><?php /*wp_nav_menu( array( 'theme_location' => 'sites', 'fallback_cb' => false, 'items_wrap' => '<ul><li id="item-id" style="color:white;">Всеукраиские издания : </li>%3$s</ul>' ) ); */?></div>-->
+
 			<div class="site-branding">
 				<?php if ( get_theme_mod('site_logo') ) : ?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo esc_url(get_theme_mod('site_logo')); ?>" alt="<?php bloginfo('name'); ?>" /></a>
@@ -72,5 +74,5 @@
 	<?php if ( is_home() && get_theme_mod('carousel_display') ) : ?>
 		<?php echo areview_carousel_template(); ?>
 	<?php endif; ?>
-	<div class="main-navigation"><div class="container" style="height:35px;"><?php wp_nav_menu( array( 'theme_location' => 'sites', 'fallback_cb' => false, 'items_wrap' => '<ul><li id="item-id" style="color:white;">Всеукраиские издания : </li>%3$s</ul>' ) ); ?></div></div>
+	<div class="isd-navigation"><div class="container" style="height:35px;"><?php wp_nav_menu( array( 'theme_location' => 'sites', 'fallback_cb' => false, 'items_wrap' => '<ul><li id="item-id" style="color:white;">Всеукраиские издания : </li>%3$s</ul>' ) ); ?></div></div>
 	<div id="content" class="site-content container">
